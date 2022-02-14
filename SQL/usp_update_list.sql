@@ -3,24 +3,24 @@
 GO
 
 	CREATE PROCEDURE dbo.usp_update_list
-		@_id INT,
-		@First_Name NVARCHAR(100), 
-		@Middle_Name NVARCHAR(100), 
-		@Last_Name NVARCHAR(100),
-		@Phone_Number NVARCHAR(50), 
-		@_Gender NVARCHAR(50) 
+		@id INT,
+		@FirstName NVARCHAR(100), 
+		@MiddleName NVARCHAR(100), 
+		@LastName NVARCHAR(100),
+		@PhoneNumber NVARCHAR(50), 
+		@Gender NVARCHAR(50) 
 	AS
 	BEGIN
 		IF NOT EXISTS (SELECT * FROM ListOfContacts WHERE First_Name = @First_Name and 
-		Middle_Name = @Middle_Name and Last_Name = @Last_Name and Phone_Number = @Phone_Number and Gender = @_Gender)
+		MiddleName = @MiddleName and LastName = @LastName and PhoneNumber = @PhoneNumber and Gender = @Gender)
 			BEGIN
 					UPDATE ListOfContacts
-					SET First_Name = @First_Name,
-						Middle_Name = @Middle_Name,
-						Last_Name = @Last_Name,
-						Phone_Number = @Phone_Number,
-						Gender = @_Gender
-					WHERE _id = @_id;
+					SET FirstName = @FirstName,
+						MiddleName = @MiddleName,
+						LastName = @LastName,
+						PhoneNumber = @PhoneNumber,
+						Gender = @Gender
+					WHERE id = @id;
 			END
 	END
 GO

@@ -87,10 +87,7 @@ namespace MVCDemo.Views.Forms
                 this.DialogResult = false;
             }
         }
-        /// <summary>
-        /// ADD VALIDATIONS HERE.. 
-        /// MUCH BETTER IF VALIDATIONS ADDED IN CONTROLLER
-        /// </summary>
+        
         private void PrepareFields()
         {
             controllerObj.FirstName = txtFName.Text;

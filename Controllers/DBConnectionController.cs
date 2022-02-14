@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using System.Windows;
 
 namespace MVCDemo.Controllers
 {
@@ -26,6 +27,12 @@ namespace MVCDemo.Controllers
         public bool Integratedsecurity { get { return this.integratedsecurity; } set { this.integratedsecurity = value; sqlStringBuilder["integrated security"] = this.integratedsecurity; sqlConnStr = sqlStringBuilder.ConnectionString; } }
         public bool Encrypt { get { return this.encrypt; } set { this.encrypt = value; sqlStringBuilder["encrypt"] = this.encrypt; sqlConnStr = sqlStringBuilder.ConnectionString; } }
         public bool Trustservercertificate { get { return this.trustservercertificate; } set { this.trustservercertificate = value; sqlStringBuilder["trustServerCertificate"] = this.trustservercertificate; sqlConnStr = sqlStringBuilder.ConnectionString; } }
+
+
+
+
+
+
 
         public bool ConnectToDB(DBConnectionController data)
         {
@@ -69,6 +76,9 @@ namespace MVCDemo.Controllers
 
 
         }
+
+
+
         public bool IsConnectedToServer()
         {
             using (SqlConnection connection = new SqlConnection(this.sqlStringBuilder.ConnectionString))
@@ -90,8 +100,9 @@ namespace MVCDemo.Controllers
 
                     return true;
                 }
-                catch (SqlException)
+                catch (SqlException ex)
                 {
+                    MessageBox.Show(ex.ToString());
                     return false;
                 }
             }

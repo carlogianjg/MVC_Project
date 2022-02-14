@@ -14,7 +14,7 @@ namespace MVCDemo.Controllers
         public DataTable GetContacts(string keyword)
         {
             keyword = string.IsNullOrWhiteSpace(keyword) == false ? keyword : "";
-            cmd = new SqlCommand("usp_SearchContacts");
+            cmd = new SqlCommand("usp_read_list");
             cmd.Parameters.AddWithValue("@Keyword", keyword);
             DataTable dt = SQLQueries.SqlExecReaderWithParams(cmd);
             return dt;
@@ -41,5 +41,22 @@ namespace MVCDemo.Controllers
             cmd.Parameters.AddWithValue("@Gender", data.Gender);
             return SQLQueries.SqlExecNQUpdate(cmd);
         }
+
+
+        public bool Delete(ContactsController data)
+        {
+            cmd = new SqlCommand("usp_delete_list");
+            cmd.Parameters.AddWithValue("@id", data.id);
+            cmd.Parameters.AddWithValue("@FirstName", data.FirstName);
+            cmd.Parameters.AddWithValue("@MiddleName", data.MiddleName);
+            cmd.Parameters.AddWithValue("@LastName", data.LastName);
+            cmd.Parameters.AddWithValue("@PhoneNumber", data.PhoneNumber);
+            cmd.Parameters.AddWithValue("@Gender", data.Gender);
+            return SQLQueries.SqlExecNQUpdate(cmd);
+        }
+
+
+
+
     }
 }

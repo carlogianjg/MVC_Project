@@ -44,14 +44,12 @@ namespace MVCDemo
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-            //ButtonCloseMenu.Visibility = Visibility.Visible;
-            //ButtonOpenMenu.Visibility = Visibility.Collapsed;
+         
         }
 
         private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-            //ButtonCloseMenu.Visibility = Visibility.Collapsed;
-            //ButtonOpenMenu.Visibility = Visibility.Visible;
+    
         }
 
         private void lvi_MouseUp(object sender, MouseButtonEventArgs e)
@@ -63,8 +61,6 @@ namespace MVCDemo
                     MainFrame.Navigate(new ContactPage());
                     txtTitleBlock.Text = $"CREATE - UPDATE - VIEW CONTACT";
                 }
-
-                //else if (sender == lviList)
 
             }
             catch (Exception)
