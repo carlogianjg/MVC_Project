@@ -23,6 +23,9 @@ namespace MVCDemo.Views.Pages
     {
         ContactsController controllerObj = new ContactsController();
         DataTable dt;
+
+       
+
         public ContactPage()
         {
             InitializeComponent();
@@ -48,11 +51,27 @@ namespace MVCDemo.Views.Pages
                 if (crudNew.DialogResult == true)
                     reload = true;
             }
+
+
+            else if (sender == btnDelete)
+            {
+
+                ContactCRUDWindow crudNew = new ContactCRUDWindow(controllerObj, true);
+                crudNew.ShowDialog();
+                if (crudNew.DialogResult == true)
+                    reload = true;
+
+            }
+
+
+
             else if (sender == btnView)
             {
                 ContactCRUDWindow crudNew = new ContactCRUDWindow(controllerObj);
                 crudNew.ShowDialog();
             }
+
+
             else if (sender == btnSearch)
                 Search();
             
@@ -72,12 +91,14 @@ namespace MVCDemo.Views.Pages
                 Search();
         }
 
+
+
         private void dgContacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataRowView drv = dgContacts.SelectedItem as DataRowView;
             if (drv != null)
             {
-                controllerObj.id = Utils.Utils.ToInt(drv["id"]);
+                controllerObj.User_ID = Utils.Utils.ToInt(drv["User_ID"]);
                 controllerObj.FirstName = drv["FirstName"].ToString();
                 controllerObj.MiddleName = drv["MiddleName"].ToString();
                 controllerObj.LastName = drv["LastName"].ToString();
@@ -85,5 +106,7 @@ namespace MVCDemo.Views.Pages
                 controllerObj.PhoneNumber = drv["PhoneNumber"].ToString();
             }
         }
+      
+
     }
 }

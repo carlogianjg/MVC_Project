@@ -22,6 +22,8 @@ BEGIN
 					OR
 					LastName like '%'+@Keyword+'%'
 					OR
+					Gender like '%'+@Keyword+'%'
+					OR
 					PhoneNumber like '%'+@Keyword+'%'
 				)
 				

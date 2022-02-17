@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Asus\source\repos\MVC_Project\App.xaml
-5-460388746
+7-553683929
 
-17-139655782
+19-71905707
 197-1375103425
-MainWindow.xaml;Resources\Values\Images.xaml;Views\DBConnectionWindow.xaml;Views\Forms\ContactCRUDWindow.xaml;Views\Pages\ContactPage.xaml;
+MainWindow.xaml;Resources\Values\Images.xaml;Views\DBConnectionWindow.xaml;Views\Forms\ContactBulkCRUDWindow.xaml;Views\Forms\ContactCRUDWindow.xaml;Views\Pages\BulkInsertPage.xaml;Views\Pages\ContactPage.xaml;
 
 False
 

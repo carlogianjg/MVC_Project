@@ -115,7 +115,7 @@ namespace MVCDemo.Controllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to conenct to the network, Please try again or Contact Administrator.{ 0} " + ex.Message.ToString(), "Network Issue");
+                MessageBox.Show("Unable to connect to the network, Please try again or Contact Administrator.{ 0} " + ex.Message.ToString(), "Network Issue");
                 return false;
             }
         }

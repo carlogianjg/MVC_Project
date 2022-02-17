@@ -62,6 +62,13 @@ namespace MVCDemo
                     txtTitleBlock.Text = $"CREATE - UPDATE - VIEW CONTACT";
                 }
 
+                else if (sender == lviBULK)
+                {
+                    MainFrame.Navigate(new BulkInsertPage());
+                    txtTitleBlock.Text = $"BULK INSERT";
+                }
+                    
+
             }
             catch (Exception)
             {

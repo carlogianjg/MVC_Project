@@ -15,7 +15,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Margin="3 0 0 0">
+        <StackPanel Orientation="Horizontal" Margin="3,0,10,0">
             <Button x:Name="btnNew"  Click="Button_Click" Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
@@ -24,6 +24,7 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
+
             <Button x:Name="btnEdit" Click="Button_Click" Margin="3 0 0 0" Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
@@ -32,6 +33,16 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
+
+            <Button x:Name="btnDelete" Click="Button_Click" Margin="3 0 0 0" Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Delete" Margin="0 5 0 0"/>
+                        <Label Content="DELETE" Style="{StaticResource MaterialDesignLabel}" Foreground="White"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
             <Button x:Name="btnView" Click="Button_Click" Margin="3 0 0 0" Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
@@ -40,13 +51,15 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <TextBox x:Name="txtSearch" KeyDown="txtSearch_KeyDown" Width="200" Margin="3 0 0 0" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignTextBoxBase}" materialDesign:HintAssist.Hint="Search"/>
-            <Button x:Name="btnSearch" Margin="3 0 0 0" Content="Search" Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}" Click="Button_Click"/>
+
+
+            <TextBox x:Name="txtSearch" KeyDown="txtSearch_KeyDown" Width="105" Margin="3 0 0 0" Style="{StaticResource MaterialDesignTextBoxBase}" materialDesign:HintAssist.Hint="Search"/>
+            <Button x:Name="btnSearch" Content="Search" Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}" Click="Button_Click" RenderTransformOrigin="2.133,0.524" Width="89"/>
         </StackPanel>
-        
+
         <DataGrid Margin="3" x:Name="dgContacts" AutoGenerateColumns="False" Grid.Row="1" Style="{StaticResource MaterialDesignDataGrid}" IsReadOnly="True" SelectionChanged="dgContacts_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding User_ID}"/>
                 <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Middle Name" Binding="{Binding MiddleName}"/>
                 <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
@@ -54,6 +67,6 @@
                 <DataGridTextColumn Header="Phone Number" Binding="{Binding PhoneNumber}"/>
             </DataGrid.Columns>
         </DataGrid>
-        
+
     </Grid>
 </Page>

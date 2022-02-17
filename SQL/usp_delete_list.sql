@@ -6,8 +6,8 @@ GO
 			@_id INT
 	AS 
 	BEGIN
-			DELETE FROM ListOfContacts
-			WHERE _id = @_id
+			DELETE FROM PhoneBook
+			WHERE User_ID = @_id
 	END
 GO	
 	
